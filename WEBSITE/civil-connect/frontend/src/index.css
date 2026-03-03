@@ -1,0 +1,57 @@
+﻿@import "tailwindcss";
+
+/* ===== Civil Connect Government Theme ===== */
+@theme {
+  --color-navy: #0B3D91;
+  --color-navy-dark: #082c6b;
+  --color-navy-light: #1a5cc8;
+  --color-green-gov: #138808;
+  --color-green-light: #1ba50a;
+  --color-saffron: #FF9933;
+  --color-saffron-dark: #e68a2e;
+  --color-bg: #F4F6F9;
+  --color-white: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-text: #1E293B;
+  --color-text-secondary: #64748B;
+  --color-text-muted: #94A3B8;
+  --color-danger: #DC2626;
+  --color-purple: #7C3AED;
+  --font-sans: "Inter", "Roboto", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+}
+
+.map-wrap { width: 100%; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border); }
+.map-wrap.h-full { height: calc(100vh - 200px); min-height: 500px; }
+
+.Toastify__toast { border-radius: 8px !important; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-count { animation: fadeUp .4s ease-out; }
+
+@keyframes livePulse {
+  0% { box-shadow: 0 0 0 0 rgba(19,136,8,0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(19,136,8,0); }
+  100% { box-shadow: 0 0 0 0 rgba(19,136,8,0); }
+}
+.live-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--color-green-gov);
+  animation: livePulse 1.5s infinite;
+}
+
+@media print { .no-print { display: none !important; } }
+
